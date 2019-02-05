@@ -1,0 +1,26 @@
+image: ubuntu
+
+before_script:
+  - apt-get update
+  - apt-get install -y make
+  - apt-get install -y gcc
+  - apt-get install -y libncurses5-dev libncursesw5-dev
+
+stages:
+  - build
+  - test
+
+ci_build:
+  stage: build
+  script:
+    - make
+    - ls -al
+
+ci_tests:
+  stage: test
+  script:    
+    - make
+    - make clean
+    - ls -al
+    - make run
+
