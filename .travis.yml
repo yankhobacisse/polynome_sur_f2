@@ -19,4 +19,4 @@ before_install:
    - make clean
    - ls -al
    - make run
-
+   - ls
